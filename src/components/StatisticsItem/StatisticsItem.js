@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
+import s from '../StatisticsItem/StatisticsItem.module.css';
 
 export default function StatisticsItem({ statItem }) {
+  const type = statItem.label.slice(1);
+
   return (
-    <li className="item">
-      <span className="label">{statItem.label}</span>
-      <span className="percentage">{statItem.percentage}%</span>
+    <li className={s[type]}>
+      <span className={s.label}>{statItem.label}</span>
+      <span className={s.percentage}>{statItem.percentage}%</span>
     </li>
   );
 }
